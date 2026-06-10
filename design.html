@@ -1,55 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - Léa</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <title>Projets Design Graphique</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Raleway:wght@400;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .project-num {
+      font-family: var(--heading-font);
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: color-mix(in srgb, var(--accent-color), transparent 65%);
+      line-height: 1;
+      margin-bottom: -8px;
+      user-select: none;
+    }
+
+    .project-eyebrow {
+      font-family: var(--nav-font);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    /* Image conteneur avec effet calque */
+    .project-img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: color-mix(in srgb, var(--accent-color), transparent 88%);
+    }
+
+    .project-img-wrap::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 50%);
+      z-index: -1;
+    }
+
+    .project-img-wrap img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .project-img-wrap:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Panneau info — padding latéral */
+    .info-side { padding-left: 40px; }
+    .info-side-rev { padding-right: 40px; }
+
+    /* Trait séparateur entre projets */
+    .project-divider {
+      border: none;
+      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+      margin: 60px 0;
+    }
+
+    /* Séparateur titre de section avec trait burlywood */
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .section-eyebrow span {
+      font-family: var(--nav-font);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: color-mix(in srgb, var(--default-color), transparent 45%);
+      white-space: nowrap;
+    }
+
+    .section-eyebrow::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: color-mix(in srgb, var(--accent-color), transparent 60%);
+    }
+
+    @media (max-width: 991px) {
+      .info-side, .info-side-rev {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .project-img-wrap img { height: 320px; }
+    }
+  </style>
 </head>
 
 <body class="portfolio-details-page">
 
+  <!-- ══ HEADER ══ -->
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1 class="sitename">Portfolio de Léa</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="index.html">Accueil</a></li>
           <li><a href="about.html">À propos de moi</a></li>
           <li><a href="resume.html">Resumé</a></li>
-          <li class="dropdown"><a href="#"><span>Projets</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#" class="active"><span>Projets</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="dev.html">Projets Développement web</a></li>
-              <li><a href="design.html">Projets Design graphique</a></li>
+              <li><a href="design.html" class="active">Projets Design graphique</a></li>
               <li><a href="audio.html">Projets Audiovisuelle</a></li>
               <li><a href="comm.html">Projets Communication</a></li>
+              <li><a href="projets-perso.html">Projets personnels</a></li>
             </ul>
           </li>
           <li><a href="contact.html">Contact</a></li>
@@ -58,10 +145,8 @@
       </nav>
 
       <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/im_lsofficial" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/leapeter/" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
 
     </div>
@@ -69,130 +154,214 @@
 
   <main class="main">
 
-    <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
+    <!-- ══ TITRE DE SECTION ══ -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Design Graphique</h2>
+      <p>Illustrations, moodboards et compositions visuelles</p>
+    </div>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio Details</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+    <!-- ══ PROJETS ══ -->
+    <section id="design-projects" class="section">
+      <div class="container">
+        <div class="row gy-4 align-items-center mb-5" data-aos="fade-up">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
-
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/app-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/product-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/branding-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/books-1.jpg" alt="">
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
+          <!-- Image -->
+          <div class="col-lg-7">
+            <div class="project-num">I</div>
+            <p class="project-eyebrow mt-1">Illustration · Direction artistique</p>
+            <h3>The Parisianer</h3>
+            <div class="project-img-wrap mt-3">
+              <a href="design/Esquisses (tracé feuille rendu en main propre).jpg" target="_blank">
+            <img src="design/Esquisses (tracé feuille rendu en main propre).jpg" alt="Esquisse linéaire d'une rue parisienne avec la Tour Eiffel et un Lamborghini">
+            </a>
             </div>
           </div>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
+          <!-- Infos -->
+          <div class="col-lg-5">
+            <div class="info-side d-flex flex-column justify-content-center h-100">
+
+              <!-- Description — classe portfolio-description de ton main.css -->
+              <div class="portfolio-description">
+                <p>
+                  Inspiré de l'esthétique du <em>New Yorker</em> revisité à la parisienne,
+                  ce projet illustre une scène de rue typique : perspective fuyante sur un boulevard
+                  haussmannien, Tour Eiffel en arrière-plan, animation urbaine au premier plan.
+                </p>
+                <p>
+                  L'ensemble est traité en tracé linéaire pur — sans aplat de couleur — pour évoquer
+                  la précision du dessin d'architecture. Un Lamborghini traverse discrètement la scène,
+                  clin d'œil contemporain qui contraste avec le patrimoine classique.
+                </p>
+                <p>
+                  Le titre <strong>The Parisianer</strong> est intégré directement dans la composition
+                  comme une couverture de magazine, jouant avec les lettres à travers les volumes architecturaux.
+                </p>
+              </div>
+
+              <!-- Fiche technique — classe portfolio-info de ton main.css -->
+              <div class="portfolio-info mt-3">
+                <h3>Fiche du projet</h3>
+                <ul>
+                  <li><strong>Type :</strong> Illustration au trait</li>
+                  <li><strong>Technique :</strong> Dessin manuel sur papier calque</li>
+                  <li><strong>Format :</strong> A3, rendu en main propre</li>
+                  <li><strong>Contexte :</strong> Projet personnel – direction artistique</li>
+                </ul>
+              </div>
+
             </div>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Exercitationem repudiandae officiis neque suscipit</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
+          </div>
+
+        </div>
+
+        <hr class="project-divider" data-aos="fade-up">
+        <div class="row gy-4 align-items-center mb-5 flex-lg-row-reverse" data-aos="fade-up">
+
+          <!-- Image -->
+          <div class="col-lg-7">
+            <div class="project-num">II</div>
+            <p class="project-eyebrow mt-1">Moodboard · Identité visuelle</p>
+            <h3>Moodboard — Paris Haussmann</h3>
+            <div class="project-img-wrap mt-3">
+              <a href="design/moodboard.jpg" target="_blank">
+                <img src="design/moodboard.jpg"
+                     alt="Planche d'ambiance esthétique parisienne avec palette beige, gris et noir">
+              </a>
+            </div>
+          </div>
+
+          <!-- Infos -->
+          <div class="col-lg-5">
+            <div class="info-side-rev d-flex flex-column justify-content-center h-100">
+
+              <div class="portfolio-description">
+                <p>
+                  Construction d'une planche d'ambiance pour poser les bases d'une identité visuelle
+                  cohérente autour de l'architecture haussmannienne parisienne.
+                </p>
+                <p>
+                  Le moodboard articule photographies de façades, textures béton et croquis architecturaux
+                  pour établir une palette chromatique volontairement sobre :
+                  <strong>#e2d7cc</strong> (beige clair), <strong>#ada8a0</strong> (gris chaud)
+                  et <strong>#000000</strong> (noir encre).
+                </p>
+                <p>
+                  L'exercice traduit une atmosphère en système visuel opérationnel, directement
+                  utilisable pour une charte graphique, un site ou une campagne de communication.
+                </p>
+              </div>
+
+              <div class="portfolio-info mt-3">
+                <h3>Fiche du projet</h3>
+                <ul>
+                  <li><strong>Type :</strong> Planche d'ambiance / Branding</li>
+                  <li><strong>Outils :</strong> Photoshop, Figma</li>
+                  <li><strong>Palette :</strong> #e2d7cc · #ada8a0 · #000000</li>
+                  <li><strong>Contexte :</strong> Recherche graphique – identité visuelle</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <hr class="project-divider" data-aos="fade-up">
+
+        <!-- ════════════════════════════════
+             PROJET III — Illustration Manga
+        ════════════════════════════════ -->
+        <div class="row gy-4 align-items-center mb-5" data-aos="fade-up">
+
+          <!-- Image -->
+          <div class="col-lg-7">
+            <div class="project-num">III</div>
+            <p class="project-eyebrow mt-1">Illustration · Dessin au trait</p>
+            <h3>Univers Manga &amp; Animation</h3>
+            <div class="project-img-wrap mt-3">
+              <a href="design/donjon.png" target="_blank">
+                <img src="design/donjon.png"
+                     alt="Illustration isométrique réunissant les univers Naruto, Jujutsu Kaisen, HxH et SAO">
+              </a>
+              <!-- → copie ton fichier PDF/image manga ici -->
+            </div>
+          </div>
+
+          <!-- Infos -->
+          <div class="col-lg-5">
+            <div class="info-side d-flex flex-column justify-content-center h-100">
+
+              <div class="portfolio-description">
+                <p>
+                  Illustration complexe à l'encre noire rassemblant quatre univers manga emblématiques
+                  dans une composition isométrique unique :
+                  <em>Naruto</em>, <em>Jujutsu Kaisen</em>, <em>Hunter × Hunter</em>
+                  et <em>Sword Art Online</em>.
+                </p>
+                <p>
+                  La composition emprunte à l'esthétique du diorama de jeu vidéo rétro — chaque zone
+                  correspond à un univers distinct, reliés par des escaliers, portails et végétation
+                  dessinés au trait fin. Un personnage au bureau représente l'autrice elle-même au cœur
+                  de ses références.
+                </p>
+                <p>
+                  Ce travail démontre la maîtrise de la perspective isométrique, de la densité de détail
+                  et de la cohérence stylistique sur un format A3 intégralement réalisé à la main.
+                </p>
+              </div>
+
+              <div class="portfolio-info mt-3">
+                <h3>Fiche du projet</h3>
+                <ul>
+                  <li><strong>Type :</strong> Illustration traditionnelle</li>
+                  <li><strong>Technique :</strong> Encre noire, perspective isométrique</li>
+                  <li><strong>Format :</strong> A3 – réalisé à la main</li>
+                  <li><strong>Contexte :</strong> Projet personnel – fanart / portfolio</li>
+                </ul>
+              </div>
+
             </div>
           </div>
 
         </div>
 
       </div>
-
-    </section><!-- /Portfolio Details Section -->
+    </section>
 
   </main>
 
+  <!-- ══ FOOTER ══ -->
   <footer id="footer" class="footer light-background">
-
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>2026</span> <strong class="px-1 sitename">Léa</strong> <span>Un site créé par Léa PETER<br></span></p>
+      <div class="copyright text-center">
+        <p>© <span>2026</span> <strong class="px-1 sitename">Léa</strong>
+          <span>Un site créé par Léa PETER</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/im_lsofficial"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/lea-peter"><i class="bi bi-linkedin"></i></a>
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> |
+        <a href="https://bootstrapmade.com/tools/">DevTools</a>
       </div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>

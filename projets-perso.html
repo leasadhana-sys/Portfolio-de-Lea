@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Projets personnels</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght=0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght=0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght=0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* Ajustement de la largeur globale du slider */
+    .portfolio-details-slider {
+      max-width: 750px; /* Un peu plus large pour s'adapter aux photos paysages et portraits */
+      margin: 0 auto;
+      padding-bottom: 40px;
+    }
+
+    /* Conteneur de chaque image */
+    .portfolio-details-slider .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f8f9fa;   /* Un fond gris très clair très élégant pour combler les vides */
+      border-radius: 12px;   /* Coins arrondis sur le bloc */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      height: 450px;         /* Hauteur fixe et identique pour tout le monde */
+    }
+
+    /* Style des photos à l'intérieur */
+    .portfolio-details-slider .swiper-slide img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;           /* L'image garde ses proportions d'origine */
+      height: auto;          /* L'image n'est JAMAIS coupée */
+      object-fit: contain;   /* Force l'image à entrer entièrement dans le cadre */
+    }
+
+    /* Puces de navigation */
+    .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+      background-color: var(--nav-color, #383838);
+      width: 18px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Portfolio de Léa</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="about.html">À propos de moi</a></li>
+          <li><a href="resume.html">Resumé</a></li>
+          <li class="dropdown"><a href="#"><span>Projets</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="dev.html">Projets Développement web</a></li>
+              <li><a href="design.html">Projets Design graphique</a></li>
+              <li><a href="audio.html">Projets Audiovisuelle</a></li>
+              <li><a href="comm.html">Projets Communication</a></li>
+              <li><a href="projets-perso.html">Projets personnels</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://www.instagram.com/im_lsofficial" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/leapeter/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section id="portfolio-details" class="portfolio-details section">
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Projets personnels</h2>
+    </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="text-center mb-5">
+    <p style="max-width: 800px; margin: 0 auto;">
+    Passionnée de dessin depuis mon plus jeune âge, j’ai continuellement fait évoluer ma pratique en expérimentant de nouvelles techniques, comme le negative art ou le dessin au stylo. Cette curiosité artistique m’a permis de développer ma créativité à travers des réalisations originales et personnelles.
+    </p>
+    </div>
+        <div class="row gy-4 justify-content-center">
+
+          <!-- Changement de col-lg-8 à col-lg-6 pour affiner la mise en page générale -->
+          <div class="col-lg-6">
+            <div class="portfolio-details-slider swiper init-swiper">
+
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": 1,
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/1.jpg" alt="Photo 1">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/2.jpg" alt="Photo 2">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/3.jpg" alt="Photo 3">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/4.jpg" alt="Photo 4">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/5.jpg" alt="Photo 5">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/6.jpg" alt="Photo 6">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/7.jpg" alt="Photo 7">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/8.jpg" alt="Photo 8">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/9.jpg" alt="Photo 9">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/10.jpg" alt="Photo 10">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/11.jpg" alt="Photo 11">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/12.jpg" alt="Photo 12">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/13.jpg" alt="Photo 13">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/14.jpg" alt="Photo 14">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/15.jpg" alt="Photo 15">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/16.jpg" alt="Photo 16">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/17.jpg" alt="Photo 17">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/18.jpg" alt="Photo 18">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/19.jpg" alt="Photo 19">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/20.jpg" alt="Photo 20">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/21.jpg" alt="Photo 21">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/22.jpg" alt="Photo 22">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/23.jpg" alt="Photo 23">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/24.jpg" alt="Photo 24">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/25.jpg" alt="Photo 25">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/26.jpg" alt="Photo 26">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/27.jpg" alt="Photo 27">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/28.jpg" alt="Photo 28">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/29.jpg" alt="Photo 29">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/30.jpg" alt="Photo 30">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/31.jpg" alt="Photo 31">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/32.jpg" alt="Photo 32">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/33.jpg" alt="Photo 33">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/34.jpg" alt="Photo 34">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/35.jpg" alt="Photo 35">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/36.jpg" alt="Photo 36">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/37.jpg" alt="Photo 37">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/38.jpg" alt="Photo 38">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/39.jpg" alt="Photo 39">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/40.jpg" alt="Photo 40">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/41.jpg" alt="Photo 41">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/42.jpg" alt="Photo 42">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/43.jpg" alt="Photo 43">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/44.jpg" alt="Photo 44">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/45.jpg" alt="Photo 45">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/46.jpg" alt="Photo 46">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/47.jpg" alt="Photo 47">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/48.jpg" alt="Photo 48">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/49.jpg" alt="Photo 49">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/50.jpg" alt="Photo 50">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="projets_perso/51.jpg" alt="Photo 51">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>2026</span> <strong class="px-1 sitename">Léa</strong> <span>Un site créé par Léa PETER<br></span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://www.instagram.com/im_lsofficial" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/leapeter/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

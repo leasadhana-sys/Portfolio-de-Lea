@@ -1,31 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - Léa</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Projets Audiovisuelle — Portfolio de Léa</title>
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Raleway:wght@400;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .project-num {
+      font-family: var(--heading-font);
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: color-mix(in srgb, var(--accent-color), transparent 65%);
+      line-height: 1;
+      margin-bottom: -8px;
+      user-select: none;
+    }
+
+    .project-eyebrow {
+      font-family: var(--nav-font);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    /* Image conteneur avec effet calque */
+    .project-img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: color-mix(in srgb, var(--accent-color), transparent 88%);
+    }
+
+    .project-img-wrap::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 50%);
+      z-index: -1;
+    }
+
+    .project-img-wrap img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .project-img-wrap:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Vidéo embed */
+    .project-video-wrap {
+      position: relative;
+      overflow: hidden;
+      background: color-mix(in srgb, var(--accent-color), transparent 88%);
+    }
+
+    .project-video-wrap::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 50%);
+      z-index: -1;
+    }
+
+    .project-video-wrap video,
+    .project-video-wrap iframe {
+      width: 100%;
+      height: 480px;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Lecteur audio stylisé */
+    .audio-player-wrap {
+      background: color-mix(in srgb, var(--accent-color), transparent 90%);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 60%);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .audio-player-wrap audio {
+      width: 100%;
+      accent-color: var(--accent-color);
+    }
+
+    .audio-label {
+      font-family: var(--nav-font);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: color-mix(in srgb, var(--default-color), transparent 45%);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .audio-label i {
+      color: var(--accent-color);
+      font-size: 0.9rem;
+    }
+
+    /* Panneau info — padding latéral */
+    .info-side { padding-left: 40px; }
+    .info-side-rev { padding-right: 40px; }
+
+    /* Trait séparateur entre projets */
+    .project-divider {
+      border: none;
+      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+      margin: 60px 0;
+    }
+
+    /* Séparateur titre de section avec trait */
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .section-eyebrow span {
+      font-family: var(--nav-font);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: color-mix(in srgb, var(--default-color), transparent 45%);
+      white-space: nowrap;
+    }
+
+    .section-eyebrow::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: color-mix(in srgb, var(--accent-color), transparent 60%);
+    }
+
+    /* Badge type de média */
+    .media-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: color-mix(in srgb, var(--accent-color), transparent 82%);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 55%);
+      border-radius: 4px;
+      padding: 3px 10px;
+      font-family: var(--nav-font);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 991px) {
+      .info-side, .info-side-rev {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .project-img-wrap img { height: 320px; }
+      .project-video-wrap video,
+      .project-video-wrap iframe { height: 240px; }
+    }
+  </style>
 </head>
 
 <body class="portfolio-details-page">
@@ -34,22 +194,21 @@
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1 class="sitename">Portfolio de Léa</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="index.html">Accueil</a></li>
           <li><a href="about.html">À propos de moi</a></li>
           <li><a href="resume.html">Resumé</a></li>
-          <li class="dropdown"><a href="#"><span>Projets</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#" class="active"><span>Projets</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="dev.html">Projets Développement web</a></li>
               <li><a href="design.html">Projets Design graphique</a></li>
-              <li><a href="audio.html">Projets Audiovisuelle</a></li>
+              <li><a href="audio.html" class="active">Projets Audiovisuelle</a></li>
               <li><a href="comm.html">Projets Communication</a></li>
+              <li><a href="projets-perso.html">Projets personnels</a></li>
             </ul>
           </li>
           <li><a href="contact.html">Contact</a></li>
@@ -58,10 +217,8 @@
       </nav>
 
       <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/im_lsofficial" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/leapeter/" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
 
     </div>
@@ -69,130 +226,192 @@
 
   <main class="main">
 
-    <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Projets Audiovisuelle</h2>
+      <p>Narration interactive, sound design et production vidéo</p>
+    </div>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio Details</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+    <section id="audio-projects" class="section">
+      <div class="container">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <!-- ── PROJET I ── -->
+        <div class="row gy-4 align-items-center mb-5" data-aos="fade-up">
 
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
-
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/app-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/product-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/branding-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/books-1.jpg" alt="">
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
+          <div class="col-lg-7">
+            <div class="project-num">I</div>
+            <p class="project-eyebrow mt-1">Narration Interactive · Fiction Twine</p>
+            <h3>Devaraj Sakthivel — L'Héritage de Chennai</h3>
+            <div class="media-badge"><i class="bi bi-controller"></i> Jeu narratif interactif</div>
+            <div class="project-img-wrap mt-2">
+              <a href="audio/Devaraj Sakthivel 1_v2_Léa_PETER.html" target="_blank">
+                <img src="audio/devaraj-cover.png"
+                     alt="Aperçu du jeu narratif Devaraj Sakthivel — L'Héritage de Chennai">
+              </a>
             </div>
           </div>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
+          <div class="col-lg-5">
+            <div class="info-side d-flex flex-column justify-content-center h-100">
+
+              <div class="portfolio-description">
+                <p>
+                  Conception d'une fiction interactive au format visual novel, développée avec Twine (moteur Harlowe). Le joueur incarne Deva, un jeune commerçant de 16 ans à Chennai, confronté à des choix moraux lourds de conséquences pour lui et son jeune frère Raja.
+                </p>
+                <p>
+                  L'expérience mêle écriture narrative, habillage graphique personnalisé (CSS), intégration d'illustrations générées et bande-son d'ambiance contextuelle, changeant selon les passages pour renforcer l'immersion émotionnelle.
+                </p>
+                <p>
+                  Chaque décision du joueur influence le déroulement de l'histoire, avec des embranchements multiples. L'interface, intégralement redessinée en CSS sur la base de Twine, rompt avec l'apparence par défaut du moteur pour proposer une esthétique dramatique cohérente avec l'univers.
+                </p>
+              </div>
+
+              <div class="portfolio-info mt-3">
+                <h3>Fiche du projet</h3>
+                <ul>
+                  <li><strong>Type :</strong> Fiction interactive / Jeu narratif</li>
+                  <li><strong>Outil :</strong> Twine 2 (Harlowe), CSS, JavaScript</li>
+                  <li><strong>Composantes :</strong> Écriture scénaristique, arborescence décisionnelle, ambiance sonore</li>
+                  <li><strong>Contexte :</strong> Projet universitaire MMI</li>
+                </ul>
+              </div>
+
             </div>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Exercitationem repudiandae officiis neque suscipit</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
+          </div>
+
+        </div>
+
+        <hr class="project-divider" data-aos="fade-up">
+
+        <!-- ── PROJET II ── -->
+        <div class="row gy-4 align-items-center mb-5 flex-lg-row-reverse" data-aos="fade-up">
+
+          <div class="col-lg-7">
+            <div class="project-num">II</div>
+            <p class="project-eyebrow mt-1">Sound Design · Composition Sonore</p>
+            <h3>Bande Sonore</h3>
+            <div class="media-badge"><i class="bi bi-music-note-beamed"></i> Création audio originale</div>
+            <div class="project-video-wrap mt-2">
+              <audio controls style="width:100%; margin: 0; display:none" id="audio-preview"></audio>
+              <!-- Visuel de remplacement -->
+            </div>
+            <div class="audio-player-wrap mt-3">
+              <div class="audio-label"><i class="bi bi-play-circle-fill"></i> Écouter la composition</div>
+              <audio controls src="audio/TDCD_GHEUX_LAURENT_PETER_fichier_son.mp3">
+                Votre navigateur ne supporte pas la lecture audio.
+              </audio>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="info-side-rev d-flex flex-column justify-content-center h-100">
+
+              <div class="portfolio-description">
+                <p>
+                  Création d'une composition sonore originale dans le cadre d'un travail de diretion artistique sonore (TDCD). La pièce est conçue pour accompagner une narration visuelle ou vidéo, en soutenant l'atmosphère émotionnelle souhaitée.
+                </p>
+                <p>
+                  Le travail porte sur la construction d'une ambiance cohérente par la superposition de couches sonores ; nappes, percussions, effets ; en veillant à l'équilibre dynamique de l'ensemble et à la progression dramatique de la composition.
+                </p>
+                <p>
+                  La bande son a été mixée et masterisée afin d'assurer une restitution optimale sur différents supports d'écoute.
+                </p>
+              </div>
+
+              <div class="portfolio-info mt-3">
+                <h3>Fiche du projet</h3>
+                <ul>
+                  <li><strong>Type :</strong> Sound design / Composition musicale</li>
+                  <li><strong>Compétences :</strong> Mixage, montage audio, direction artistique sonore</li>
+                  <li><strong>Format :</strong> Fichier audio MP3</li>
+                  <li><strong>Contexte :</strong> Projet TDCD — MMI Troyes</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <hr class="project-divider" data-aos="fade-up">
+
+        <!-- ── PROJET III ── -->
+        <div class="row gy-4 align-items-center mb-5" data-aos="fade-up">
+
+          <div class="col-lg-7">
+            <div class="project-num">III</div>
+            <p class="project-eyebrow mt-1">Production Vidéo · Montage</p>
+            <h3>Vidéo MMI — Production Finale</h3>
+            <div class="media-badge"><i class="bi bi-camera-video-fill"></i> Vidéo de production</div>
+            <div class="project-video-wrap mt-2">
+              <video controls poster="audio/video-mmi-poster.png">
+                <source src="audio/vidéo_mmi_final.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture vidéo.
+              </video>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="info-side d-flex flex-column justify-content-center h-100">
+
+              <div class="portfolio-description">
+                <p>
+                  Réalisation complète d'une vidéo de production dans le cadre de la formation MMI, couvrant les étapes de tournage, de montage et de post-production.
+                </p>
+                <p>
+                  Le projet met en pratique les techniques d'écriture audiovisuelle ; cadrage, rythme de montage, raccords ; associées à un travail soigné sur la colorimétrie et le mixage son afin de livrer un rendu professionnel.
+                </p>
+                <p>
+                  La direction artistique globale (captation, montage et étalonnage) a été assurée pour garantir la cohérence visuelle et narrative du produit final.
+                </p>
+              </div>
+
+              <div class="portfolio-info mt-3">
+                <h3>Fiche du projet</h3>
+                <ul>
+                  <li><strong>Type :</strong> Production vidéo / Montage</li>
+                  <li><strong>Compétences :</strong> Tournage, montage, étalonnage, post-production</li>
+                  <li><strong>Format :</strong> Vidéo MP4 — rendu final</li>
+                  <li><strong>Contexte :</strong> Projet de synthèse MMI</li>
+                </ul>
+              </div>
+
             </div>
           </div>
 
         </div>
 
       </div>
-
-    </section><!-- /Portfolio Details Section -->
+    </section>
 
   </main>
 
   <footer id="footer" class="footer light-background">
-
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>2026</span> <strong class="px-1 sitename">Léa</strong> <span>Un site créé par Léa PETER<br></span></p>
+      <div class="copyright text-center">
+        <p>© <span>2026</span> <strong class="px-1 sitename">Léa</strong>
+          <span>Un site créé par Léa PETER</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/im_lsofficial"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/lea-peter"><i class="bi bi-linkedin"></i></a>
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> |
+        <a href="https://bootstrapmade.com/tools/">DevTools</a>
       </div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>
