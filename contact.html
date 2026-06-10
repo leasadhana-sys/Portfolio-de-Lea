@@ -101,7 +101,7 @@
           </div>
 
           <div class="col-lg-7">
-            <form action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up" data-aos-delay="200" class="php-email-form">
+            <form id="contactForm" data-aos="fade-up" data-aos-delay="200"></form>
               <input type="hidden" name="access_key" value="d2ccdb00-289f-44fa-9c7a-1d65439ffd1b">
               
               <div class="row gy-4">
@@ -175,6 +175,35 @@
 
   <script src="assets/js/main.js"></script>
 
+  <script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Empêche le rechargement de la page qui bugue sur GitHub
+
+    const formData = new FormData(this);
+    
+    // On envoie les données proprement en arrière-plan
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Message de succès
+            alert('Merci ! Votre message a bien été envoyé.');
+            document.getElementById('contactForm').reset(); // Vide le formulaire
+        } else {
+            // Si Web3Forms renvoie une erreur
+            alert('Oups ! Il y a eu un problème : ' + data.message);
+        }
+    })
+    .catch(error => {
+        // Si la connexion échoue (bloqué par le navigateur ou GitHub)
+        console.error('Erreur:', error);
+        alert('Erreur de connexion. Veuillez réessayer.');
+    });
+});
+</script>
 </body>
 
 </html>
