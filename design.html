@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact - Léa</title>
+  <title>Portfolio Details - Léa</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -28,12 +28,14 @@
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
-<body class="contact-page">
+<body class="portfolio-details-page">
 
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1 class="sitename">Portfolio de Léa</h1>
       </a>
 
@@ -56,8 +58,10 @@
       </nav>
 
       <div class="header-social-links">
-        <a href="https://www.instagram.com/im_lsofficial"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/leapeter/"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
 
     </div>
@@ -65,88 +69,84 @@
 
   <main class="main">
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Je serais ravie d’échanger avec d'autres étudiants ou des professionnels du milieu par mail : lea.sadhana@gmail.com ou sur mon compte : linkedin.com/in/leapeter. Vous pouvez également me contacter via ce formulaire :</p>
+        <h2>Portfolio Details</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
 
-          <div class="col-lg-5">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
 
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Adresse</h3>
-                  <p>Tigery, France</p>
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/app-1.jpg" alt="">
                 </div>
-              </div><!-- End Info Item -->
 
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Numéro de téléphone</h3>
-                  <p>+33 6 27 71 75 27</p>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/product-1.jpg" alt="">
                 </div>
-              </div><!-- End Info Item -->
 
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email</h3>
-                  <p>lea.sadhana@gmail.com</p>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/branding-1.jpg" alt="">
                 </div>
-              </div><!-- End Info Item -->
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21088.907983850044!2d2.498299639645811!3d48.64594391343367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5e1d67e963e01%3A0x4c11e194006e23a0!2sLac%20de%20Tigery!5e0!3m2!1sfr!2sfr!4v1781068434602!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/books-1.jpg" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
           </div>
-          </div>
 
-          <div class="col-lg-7">
-            <form action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up" data-aos-delay="200">
-  <input type="hidden" name="access_key" value="d2ccdb00-289f-44fa-9c7a-1d65439ffd1b">
-              <div class="row gy-4">
-
-    <div class="col-md-6">
-      <label for="name-field" class="pb-2">Votre Nom</label>
-      <input type="text" name="name" id="name-field" class="form-control" required="">
-    </div>
-
-    <div class="col-md-6">
-      <label for="email-field" class="pb-2">Votre Email</label>
-      <input type="email" class="form-control" name="email" id="email-field" required="">
-    </div>
-
-    <div class="col-md-12">
-      <label for="subject-field" class="pb-2">Sujet</label>
-      <input type="text" class="form-control" name="subject" id="subject-field" required="">
-    </div>
-
-    <div class="col-md-12">
-      <label for="message-field" class="pb-2">Message</label>
-      <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-    </div>
-
-    <div class="col-md-12 text-center">
-      <button type="submit" class="btn btn-primary" style="background: var(--accent-color); border: 0; padding: 10px 30px; color: #fff; transition: 0.4s; border-radius: 4px;">Envoyer le message</button>
-    </div>
-
-  </div>
-</form>
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Web design</li>
+                <li><strong>Client</strong>: ASU Company</li>
+                <li><strong>Project date</strong>: 01 March, 2020</li>
+                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>Exercitationem repudiandae officiis neque suscipit</h2>
+              <p>
+                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              </p>
+            </div>
           </div>
 
         </div>
 
       </div>
 
-    </section>
+    </section><!-- /Portfolio Details Section -->
 
   </main>
 
@@ -157,20 +157,29 @@
         <p>© <span>2026</span> <strong class="px-1 sitename">Léa</strong> <span>Un site créé par Léa PETER<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
-        <a href="https://www.instagram.com/im_lsofficial"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/leapeter/"><i class="bi bi-linkedin"></i></a>
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
       </div>
       <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
       </div>
     </div>
 
   </footer>
 
+  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Preloader -->
   <div id="preloader"></div>
 
+  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -181,6 +190,7 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
+  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
