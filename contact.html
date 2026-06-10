@@ -65,81 +65,72 @@
 
   <main class="main">
 
-    <!-- Contact Section -->
     <section id="contact" class="contact section">
 
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
         <p>Je serais ravie d’échanger avec d'autres étudiants ou des professionnels du milieu par mail : lea.sadhana@gmail.com ou sur mon compte : linkedin.com/in/leapeter. Vous pouvez également me contacter via ce formulaire :</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      </div><div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
 
           <div class="col-lg-5">
 
-            <div class="info-wrap">
+            <div class="info-wrap" style="height: 100%;">
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h3>Adresse</h3>
                   <p>Tigery, France</p>
                 </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              </div><div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                 <i class="bi bi-telephone flex-shrink-0"></i>
                 <div>
                   <h3>Numéro de téléphone</h3>
                   <p>+33 6 27 71 75 27</p>
                 </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              </div><div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h3>Email</h3>
                   <p>lea.sadhana@gmail.com</p>
                 </div>
-              </div><!-- End Info Item -->
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21088.907983850044!2d2.498299639645811!3d48.64594391343367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5e1d67e963e01%3A0x4c11e194006e23a0!2sLac%20de%20Tigery!5e0!3m2!1sfr!2sfr!4v1781068434602!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
+              </div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21088.907983850044!2d2.498299639645811!3d48.64594391343367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5e1d67e963e01%3A0x4c11e194006e23a0!2sLac%20de%20Tigery!5e0!3m2!1sfr!2sfr!4v1781068434602!5m2!1sfr!2sfr" width="100%" height="350" style="border:0; border-radius: 4px; margin-top: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
           </div>
 
           <div class="col-lg-7">
-            <form action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up" data-aos-delay="200">
-  <input type="hidden" name="access_key" value="d2ccdb00-289f-44fa-9c7a-1d65439ffd1b">
+            <form action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up" data-aos-delay="200" class="php-email-form">
+              <input type="hidden" name="access_key" value="d2ccdb00-289f-44fa-9c7a-1d65439ffd1b">
+              
               <div class="row gy-4">
 
-    <div class="col-md-6">
-      <label for="name-field" class="pb-2">Votre Nom</label>
-      <input type="text" name="name" id="name-field" class="form-control" required="">
-    </div>
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Votre Nom</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                </div>
 
-    <div class="col-md-6">
-      <label for="email-field" class="pb-2">Votre Email</label>
-      <input type="email" class="form-control" name="email" id="email-field" required="">
-    </div>
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Votre Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                </div>
 
-    <div class="col-md-12">
-      <label for="subject-field" class="pb-2">Sujet</label>
-      <input type="text" class="form-control" name="subject" id="subject-field" required="">
-    </div>
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Sujet</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                </div>
 
-    <div class="col-md-12">
-      <label for="message-field" class="pb-2">Message</label>
-      <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-    </div>
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                </div>
 
-    <div class="col-md-12 text-center">
-      <button type="submit" class="btn btn-primary" style="background: var(--accent-color); border: 0; padding: 10px 30px; color: #fff; transition: 0.4s; border-radius: 4px;">Envoyer le message</button>
-    </div>
+                <div class="col-md-12 text-center pt-3">
+                  <button type="submit" class="btn btn-primary" style="background: var(--accent-color, #0d6efd); border: 0; padding: 10px 30px; color: #fff; transition: 0.4s; border-radius: 4px;">Envoyer le message</button>
+                </div>
 
-  </div>
-</form>
+              </div>
+            </form>
           </div>
 
         </div>
